@@ -17,7 +17,7 @@
   </div>
 
   <div class="chat__main">
-    <div id="messages" class="chat__messages"></div>
+    <ol id="messages" class="chat__messages"></ol>
 
     <div class="chat__footer">
       <form id="message-form">
@@ -29,21 +29,25 @@
   </div>
 
   <script id="message-template" type="text/template">
+    <li class="message">
     <div class="container">
        <img src="/css/user.png" alt={{from}} style="width:50%;">
        <h4 style="float:right">{{from}}</h4>
       <p style="padding:5px;">{{text}}</p>
       <span class="time-right">{{createdAt}}</span>
     </div>
+  </li>
   </script>
 
   <script id="message-user-template" type="text/template">
+    <li class="message">
     <div class="container darker">
        <img src="/css/user.png" alt={{from}} class="right" style="width:100%;">
        <h4 style="float:left">{{from}}</h4>
       <p style="padding:5px;float:right">{{text}}</p><br>
       <span class="time-left" style="float:bottom">{{createdAt}}</span>
     </div>
+  </li>
   </script>
 
 
