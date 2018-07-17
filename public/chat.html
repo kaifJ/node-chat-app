@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <title>Chat | ChatApp</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 
@@ -17,7 +17,7 @@
   </div>
 
   <div class="chat__main">
-    <ol id="messages" class="chat__messages"></ol>
+    <div id="messages" class="chat__messages"></div>
 
     <div class="chat__footer">
       <form id="message-form">
@@ -29,30 +29,21 @@
   </div>
 
   <script id="message-template" type="text/template">
-    <li class="message">
-
-        <div class="message__title">
-          <h4>{{from}}</h4>
-          <span>{{createdAt}}</span>
-        </div>
-        <div class="message__body">
-          <p>{{text}}</p>
-        </div>
-
-    </li>
+    <div class="container">
+       <img src="/css/user.png" alt={{from}} style="width:50%;">
+       <h4 style="float:right">{{from}}</h4>
+      <p style="padding:5px;">{{text}}</p>
+      <span class="time-right">{{createdAt}}</span>
+    </div>
   </script>
 
   <script id="message-user-template" type="text/template">
-    <li class="message">
-      <div class="message__title" >
-        <h4>{{from}}</h4>
-        <span>{{createdAt}}</span>
-      </div>
-      <div class="message__body">
-        <p>{{text}}</p>
-      </div>
-
-  </li>
+    <div class="container darker">
+       <img src="/css/user.png" alt={{from}} class="right" style="width:100%;">
+       <h4 style="float:left">{{from}}</h4>
+      <p style="padding:5px;float:right">{{text}}</p><br>
+      <span class="time-left" style="float:bottom">{{createdAt}}</span>
+    </div>
   </script>
 
 

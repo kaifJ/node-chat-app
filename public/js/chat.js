@@ -43,9 +43,9 @@ socket.on('updateUserList', function (users) {
   jQuery('#users').html(ol);
 });
 
-socket.on('newMessage', function (message) {
+socket.on('newUserMessage', function (message) {
   var formattedTime = moment(message.createdAt).format('h:mm a');
-  var template = jQuery('#message-template').html();
+  var template = jQuery('#message-user-template').html();
   var html = Mustache.render(template, {
     text: message.text,
     from: message.from,
@@ -56,10 +56,9 @@ socket.on('newMessage', function (message) {
   scrollToBottom();
 });
 
-
-socket.on('newUserMessage', function (message) {
+socket.on('newMessage', function (message) {
   var formattedTime = moment(message.createdAt).format('h:mm a');
-  var template = jQuery('#message-user-template').html();
+  var template = jQuery('#message-template').html();
   var html = Mustache.render(template, {
     text: message.text,
     from: message.from,
